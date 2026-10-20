@@ -1,0 +1,32 @@
+REPORTE DEL DATAFRAME TRANSFORMADO
+============================================================
+Filas: 242631
+Columnas: 6
+Duplicados: 761
+
+Columnas y tipos:
+- titulo: object
+- autor: object
+- paginas: float64
+- calificacion: float64
+- editorial: object
+- idioma: object
+
+Valores nulos por columna:
+- titulo: 0
+- autor: 0
+- paginas: 0
+- calificacion: 0
+- editorial: 0
+- idioma: 0
+
+Estadísticas numéricas:
+            paginas  calificacion
+count  2.426310e+05    242631.000
+mean   2.900041e+03         4.070
+std    1.299554e+06         0.396
+min    0.000000e+00         3.500
+25%    1.210000e+02         3.790
+50%    2.240000e+02         4.000
+75%    3.360000e+02         4.250
+max    6.401284e+08         5.000
