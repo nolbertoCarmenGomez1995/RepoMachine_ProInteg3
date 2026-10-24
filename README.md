@@ -1,6 +1,53 @@
 # RepoMachine_ProInteg3
-Repositorio para las actividades de Proyecto Integrado 3 de Analitica de Datos de Nolberto Gomez-AndresDavidMesa, Machine Learning- Nolberto Carmen Gomez Universidad IU Digital De Antioquia 
 
-Este repositorio contiene la entrega de la Actividad 1 para la materia Proyecto Integrado III - Analitica de Datos. El proyecto se encarga de cargar el dataset publico pfaha/goodreads-books desde Hugging Face y procesarlo dentro del notebook actividad1.ipynb aplicando cuatro transformaciones basicas con Pandas como seleccion de columnas, renombrado al espanol, limpieza de nulos y filtrado por calificacion.
+Repositorio de trabajo para Proyecto Integrado III y Machine Learning.
 
-El flujo esta orquestado modularmente utilizando clases en Python guardadas en la carpeta src/ para la carga de datos y la generacion de reportes. Ademas, cuenta con un workflow en GitHub Actions que ejecuta automaticamente el notebook con cada push y guarda el resumen actualizado en un archivo de texto dentro de la carpeta reportes/.
+## Proyecto Integrado III
+
+La actividad propia de este repositorio esta en `actividad1.ipynb`. Carga el
+dataset `pfaha/goodreads-books` desde Hugging Face, selecciona y transforma
+columnas de libros, limpia valores nulos, filtra por calificacion y guarda un
+reporte en `reportes/goodreads_books.txt`.
+
+El notebook utiliza `HFDatasetLoader` y `Reportes`, implementados en
+`src/hf_loader.py` y `src/reportes.py`.
+
+## Machine Learning
+
+`src/regresion_lineal.py` y `src/clasificador_text.py` contienen las clases de
+regresion y clasificacion. La carpeta `sincronicas/` conserva los notebooks de
+las sesiones del curso, cuyos ejemplos usan datasets distintos al de libros.
+
+Esos notebooks hacen imports desde `clases_po`, una carpeta que no existe en
+esta estructura. Se conservan como material de referencia y requieren adaptar
+sus imports y, segun el ejercicio, sus datos o la interfaz de las clases antes
+de ejecutarse con este proyecto.
+
+## Estructura
+
+```text
+actividad1.ipynb                 Actividad propia con Goodreads
+src/hf_loader.py                 Carga de datasets de Hugging Face
+src/reportes.py                  Generacion de reportes
+src/regresion_lineal.py          Clase de regresion lineal
+src/clasificador_text.py         Clase de clasificacion de texto
+sincronicas/                     Material de las sesiones del curso
+reportes/goodreads_books.txt     Reporte generado por la actividad
+requirements.txt                 Dependencias del proyecto
+```
+
+## Entorno y ejecucion
+
+Desde la raiz del repositorio, en Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+jupyter notebook actividad1.ipynb
+```
+
+La carga de Goodreads requiere conexion a internet. El workflow de GitHub
+Actions ejecuta `actividad1.ipynb` al hacer push a `main` y actualiza el
+reporte generado.
