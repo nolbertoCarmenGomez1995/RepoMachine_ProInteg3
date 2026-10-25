@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: semana-3-libros-${{ github.ref }}
+  group: reportes-automaticos-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -21,6 +21,14 @@ jobs:
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sincronizar con main
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git fetch origin main
+          git merge --ff-only origin/main
 
       - name: Configurar Python
         uses: actions/setup-python@v5
@@ -57,6 +65,8 @@ jobs:
           fi
 
           git commit -m "chore: actualizar resumen de modelos Goodreads [skip ci]"
+          git fetch origin main
+          git rebase origin/main
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Publicar resumen y notebook ejecutado

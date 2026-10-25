@@ -82,4 +82,6 @@ ejecutado como artefacto descargable en la ejecución de GitHub Actions. Tambié
 actualiza `reportes/resumen_modelos_libros.txt` en `main` mediante un commit
 automático del bot de GitHub Actions. El commit usa `[skip ci]` para evitar
 iniciar otra ejecución por la actualización del reporte. El workflow de Semana
-1 se conserva como ejemplo del profesor.
+1 se conserva como ejemplo del profesor. Los workflows propios de Actividad 1
+y Semana 3 comparten un grupo de concurrencia y sincronizan con `main` antes de
+guardar resultados, para evitar colisiones entre sus commits automáticos.
