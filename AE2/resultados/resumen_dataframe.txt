@@ -1,0 +1,90 @@
+RESUMEN DEL DATAFRAME
+============================================================
+Dataset: pfaha/goodreads-books
+Enlace: https://huggingface.co/datasets/pfaha/goodreads-books
+Configuración: default
+Split: train
+Revisión: 43b3198cd7ec9c142d56181f1a09ed9e8c112610
+Fecha de consulta: 2026-10-24
+Muestra: No; se resume el split train completo de la revisión indicada
+
+Filas: 500000
+Columnas: 24
+
+Columnas y tipos:
+- title: object
+- contributors: object
+- first_author: object
+- description: object
+- genres: object
+- series: object
+- format: object
+- pages: float64
+- language: object
+- asin: object
+- isbn10: object
+- isbn13: object
+- publisher: object
+- publication_date: object
+- average_rating: float64
+- ratings_count: float64
+- reviews_count: float64
+- work_id: float64
+- catalog_guideline_violation: bool
+- book_id: object
+- url: object
+- num_editions: float64
+- has_more_editions: bool
+- is_part_of_series: bool
+
+Valores nulos por columna:
+- title: 0
+- contributors: 0
+- first_author: 160
+- description: 65575
+- genres: 0
+- series: 0
+- format: 5107
+- pages: 38992
+- language: 19787
+- asin: 2909
+- isbn10: 28831
+- isbn13: 30208
+- publisher: 7777
+- publication_date: 30793
+- average_rating: 258
+- ratings_count: 258
+- reviews_count: 258
+- work_id: 253
+- catalog_guideline_violation: 0
+- book_id: 0
+- url: 0
+- num_editions: 269
+- has_more_editions: 0
+- is_part_of_series: 0
+
+Valores vacíos por columna (texto '' o lista vacía, no cuentan como nulos):
+- title: 0
+- contributors: 160
+- first_author: 0
+- description: 14
+- genres: 307620
+- series: 437717
+- format: 2258
+- pages: 0
+- language: 0
+- asin: 0
+- isbn10: 0
+- isbn13: 0
+- publisher: 8057
+- publication_date: 0
+- average_rating: 0
+- ratings_count: 0
+- reviews_count: 0
+- work_id: 0
+- catalog_guideline_violation: 0
+- book_id: 0
+- url: 0
+- num_editions: 0
+- has_more_editions: 0
+- is_part_of_series: 0
