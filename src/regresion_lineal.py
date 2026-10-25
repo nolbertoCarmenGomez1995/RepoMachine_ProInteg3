@@ -22,6 +22,7 @@ class RegresionLineal:
         target_column: str = "Price",
         test_size: float = 0.2,
         random_state: int = 42,
+        directorio_entrenamiento: str | Path = "entrenamiento",
     ) -> None:
         self.feature_column = self._normalizar_nombres_X(feature_column)
         if not isinstance(target_column, str):
@@ -32,10 +33,13 @@ class RegresionLineal:
             raise ValueError("La característica y el objetivo deben ser diferentes.")
         if not 0 < test_size < 1:
             raise ValueError("test_size debe estar entre 0 y 1.")
+        if not isinstance(directorio_entrenamiento, (str, Path)):
+            raise TypeError("directorio_entrenamiento debe ser una ruta.")
 
         self.target_column = target_column
         self.test_size = test_size
         self.random_state = random_state
+        self.directorio_entrenamiento = Path(directorio_entrenamiento)
         self.df: pd.DataFrame | None = None
         self.X: pd.DataFrame | None = None
         self.y: pd.Series | None = None
@@ -695,7 +699,11 @@ class RegresionLineal:
 
         ultima = registro.iloc[-1]
         valor_anterior = float(ultima["metrica"])
-        entrenamiento = self.entrenar(X_train, y_train)
+        entrenamiento = self.entrenar(
+            X_train,
+            y_train,
+            directorio_entrenamiento=self.directorio_entrenamiento,
+        )
         ruta_nueva = entrenamiento["ruta_modelo"]
         metricas_nuevas = self.evaluar(ruta_nueva, X_test, y_test)
         valor_nuevo = metricas_nuevas[metrica]
@@ -825,7 +833,11 @@ class RegresionLineal:
         self.y_test = y_test
         self.paso_actual = "entrenar"
         print("[ejecutar][3/6] Iniciando entrenar.")
-        entrenamiento = self.entrenar(X_train, y_train)
+        entrenamiento = self.entrenar(
+            X_train,
+            y_train,
+            directorio_entrenamiento=self.directorio_entrenamiento,
+        )
         modelo = entrenamiento["modelo"]
         self.paso_actual = "predecir"
         print("[ejecutar][4/6] Iniciando predecir.")

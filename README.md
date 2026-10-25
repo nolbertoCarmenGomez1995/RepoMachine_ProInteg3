@@ -69,7 +69,9 @@ jupyter notebook sincronicas/Semana_3_LIBROS.ipynb
 
 Ejecuta todas las celdas en orden. El resumen se genera automáticamente en
 `reportes/resumen_modelos_libros.txt`; contiene las métricas de la ejecución,
-no valores escritos manualmente.
+no valores escritos manualmente. Los archivos pickle de los modelos se guardan
+temporalmente y se eliminan al terminar; así cada ejecución genera solo el
+resumen y no acumula copias de modelos.
 
 La carga de Goodreads requiere conexion a internet. El workflow de GitHub
 Actions ejecuta `actividad1.ipynb` al hacer push a `main` y actualiza el

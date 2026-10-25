@@ -79,6 +79,10 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Modelos generados por los notebooks de entrenamiento
+/modelos/libros/
+/sincronicas/entrenamiento/
+
 # IPython
 profile_default/
 ipython_config.py
