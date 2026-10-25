@@ -1,8 +1,8 @@
 REPORTE DEL DATAFRAME TRANSFORMADO
 ============================================================
 Filas: 242631
-Columnas: 6
-Duplicados: 761
+Columnas: 10
+Duplicados: 89
 
 Columnas y tipos:
 - titulo: object
@@ -11,6 +11,10 @@ Columnas y tipos:
 - calificacion: float64
 - editorial: object
 - idioma: object
+- num_calificaciones: float64
+- num_resenas: float64
+- es_parte_de_serie: bool
+- formato: object
 
 Valores nulos por columna:
 - titulo: 0
@@ -19,14 +23,18 @@ Valores nulos por columna:
 - calificacion: 0
 - editorial: 0
 - idioma: 0
+- num_calificaciones: 0
+- num_resenas: 0
+- es_parte_de_serie: 0
+- formato: 0
 
 Estadísticas numéricas:
-            paginas  calificacion
-count  2.426310e+05    242631.000
-mean   2.900041e+03         4.070
-std    1.299554e+06         0.396
-min    0.000000e+00         3.500
-25%    1.210000e+02         3.790
-50%    2.240000e+02         4.000
-75%    3.360000e+02         4.250
-max    6.401284e+08         5.000
+            paginas  calificacion  num_calificaciones  num_resenas
+count  2.426310e+05    242631.000        2.426310e+05   242631.000
+mean   2.900041e+03         4.070        1.978588e+04      774.514
+std    1.299554e+06         0.396        2.064168e+05     6397.337
+min    0.000000e+00         3.500        1.000000e+00        0.000
+25%    1.210000e+02         3.790        4.000000e+00        0.000
+50%    2.240000e+02         4.000        2.200000e+01        3.000
+75%    3.360000e+02         4.250        3.000000e+02       28.000
+max    6.401284e+08         5.000        1.186728e+07   277914.000
