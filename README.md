@@ -78,5 +78,8 @@ Actions ejecuta `actividad1.ipynb` al hacer push a `main` y actualiza el
 reporte generado. El flujo de Machine Learning está separado en
 `.github/workflows/ejecutar-semana-3-libros.yml`: se activa al hacer push a
 `main`, ejecuta el notebook completo y publica el resumen `.txt` y el notebook
-ejecutado como artefacto descargable en la ejecución de GitHub Actions. El
-workflow de Semana 1 se conserva como ejemplo del profesor.
+ejecutado como artefacto descargable en la ejecución de GitHub Actions. También
+actualiza `reportes/resumen_modelos_libros.txt` en `main` mediante un commit
+automático del bot de GitHub Actions. El commit usa `[skip ci]` para evitar
+iniciar otra ejecución por la actualización del reporte. El workflow de Semana
+1 se conserva como ejemplo del profesor.

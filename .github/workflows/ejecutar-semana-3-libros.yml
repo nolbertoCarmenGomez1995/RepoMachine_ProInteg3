@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: semana-3-libros-${{ github.ref }}
@@ -43,6 +43,21 @@ jobs:
             --output Semana_3_LIBROS_ejecutado.ipynb \
             --output-dir artifacts \
             --ExecutePreprocessor.timeout=3600
+
+      - name: Guardar copia actualizada del resumen en main
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reportes/resumen_modelos_libros.txt
+
+          if git diff --cached --quiet; then
+            echo "El resumen no tuvo cambios."
+            exit 0
+          fi
+
+          git commit -m "chore: actualizar resumen de modelos Goodreads [skip ci]"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Publicar resumen y notebook ejecutado
         uses: actions/upload-artifact@v4
