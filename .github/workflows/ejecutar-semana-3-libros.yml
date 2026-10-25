@@ -1,0 +1,55 @@
+name: Ejecutar Semana 3 - Goodreads
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: semana-3-libros-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  entrenar-evaluar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Ejecutar preprocesamiento y modelos
+        run: |
+          mkdir -p artifacts reportes
+          python -m jupyter nbconvert \
+            --to notebook \
+            --execute sincronicas/Semana_3_LIBROS.ipynb \
+            --output Semana_3_LIBROS_ejecutado.ipynb \
+            --output-dir artifacts \
+            --ExecutePreprocessor.timeout=3600
+
+      - name: Publicar resumen y notebook ejecutado
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-semana-3-goodreads
+          path: |
+            reportes/resumen_modelos_libros.txt
+            artifacts/Semana_3_LIBROS_ejecutado.ipynb
+          if-no-files-found: error
+          retention-days: 30
