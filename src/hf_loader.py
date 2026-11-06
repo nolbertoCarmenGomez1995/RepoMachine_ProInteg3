@@ -18,6 +18,7 @@ class HFDatasetLoader:
         dataset_name: str,
         config: str | None = None,
         split: str = "train",
+        revision: str | None = None,
         token: str | None = None,
         cache_dir: str | None = None,
         max_rows: int | None = None,
@@ -27,6 +28,7 @@ class HFDatasetLoader:
         self.dataset_name = dataset_name
         self.config = config
         self.split = split
+        self.revision = revision
         self.token = token
         self.cache_dir = cache_dir
         self.max_rows = max_rows
@@ -45,6 +47,7 @@ class HFDatasetLoader:
             self.dataset_name,
             self.config,
             split=self.split,
+            revision=self.revision,
             token=self.token,
             cache_dir=self.cache_dir,
         )
@@ -64,6 +67,7 @@ class HFDatasetLoader:
             "dataset": self.dataset_name,
             "config": self.config,
             "split": self.split,
+            "revision": self.revision,
             "filas": len(self.df),
             "columnas": len(self.df.columns),
         }

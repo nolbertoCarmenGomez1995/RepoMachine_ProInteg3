@@ -1,0 +1,64 @@
+RESUMEN DEL DATAFRAME
+============================================================
+Dataset: pfaha/goodreads-books
+Configuración: default
+Split: train
+Revisión: 43b3198cd7ec9c142d56181f1a09ed9e8c112610
+Filtro: average_rating >= 3.5
+Páginas incluidas: 1 a 5.000; umbral 350 páginas (provisional acordado)
+Unidad exportada: Registro/edición; work_id se conserva para contar obras únicas
+Métricas de lectores: Se resumen por registro; no se suman entre ediciones
+
+Filas: 235104
+Columnas: 15
+
+Columnas y tipos:
+- book_id: str
+- work_id: float64
+- title: str
+- pages: float64
+- categoria_extension: str
+- average_rating: float64
+- ratings_count: float64
+- reviews_count: float64
+- publisher_original: str
+- publisher: string
+- language_original: str
+- language: string
+- is_part_of_series: bool
+- cantidad_series: int64
+- format: str
+
+Valores nulos por columna:
+- book_id: 0
+- work_id: 0
+- title: 0
+- pages: 0
+- categoria_extension: 0
+- average_rating: 0
+- ratings_count: 0
+- reviews_count: 0
+- publisher_original: 4382
+- publisher: 6915
+- language_original: 5576
+- language: 5576
+- is_part_of_series: 0
+- cantidad_series: 0
+- format: 1620
+
+Valores vacíos por columna (texto '' o lista vacía, no cuentan como nulos):
+- book_id: 0
+- work_id: 0
+- title: 0
+- pages: 0
+- categoria_extension: 0
+- average_rating: 0
+- ratings_count: 0
+- reviews_count: 0
+- publisher_original: 2533
+- publisher: 0
+- language_original: 0
+- language: 0
+- is_part_of_series: 0
+- cantidad_series: 0
+- format: 337
