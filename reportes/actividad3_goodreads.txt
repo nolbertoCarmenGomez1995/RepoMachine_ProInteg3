@@ -1,6 +1,6 @@
 RESUMEN AUTOMÁTICO — ACTIVIDAD 3 GOODREADS
 ==========================================================
-Fecha de ejecución: 2026-11-07T01:23:00-05:00
+Fecha de ejecución: 2026-11-07T22:21:58+00:00
 Pregunta de negocio: Entre los libros de Goodreads con calificacion promedio igual o superior a 3.5, que perfiles de extension fisica y participacion de lectores se pueden identificar para orientar como una libreria distribuye su espacio de exhibicion y prioriza su curaduria?
 Beneficiario: equipo hipotético de compras y exhibición de Librerías Plaza Lectura.
 Decisión apoyada: usar perfiles de libros como referencia inicial para curar el catálogo y planear exhibición.
