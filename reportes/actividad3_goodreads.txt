@@ -1,0 +1,41 @@
+RESUMEN AUTOMÁTICO — ACTIVIDAD 3 GOODREADS
+==========================================================
+Fecha de ejecución: 2026-11-07T01:23:00-05:00
+Pregunta de negocio: Entre los libros de Goodreads con calificacion promedio igual o superior a 3.5, que perfiles de extension fisica y participacion de lectores se pueden identificar para orientar como una libreria distribuye su espacio de exhibicion y prioriza su curaduria?
+Beneficiario: equipo hipotético de compras y exhibición de Librerías Plaza Lectura.
+Decisión apoyada: usar perfiles de libros como referencia inicial para curar el catálogo y planear exhibición.
+Dataset: pfaha/goodreads-books (https://huggingface.co/datasets/pfaha/goodreads-books), split train de Hugging Face.
+Tipo de aprendizaje: no supervisado.
+Algoritmo: K-Means.
+Variables: paginas, calificacion, log1p_cantidad_calificaciones, log1p_cantidad_resenas.
+Preprocesamiento: rating entre 3.5 y 5; páginas >= 20 y <= valla superior IQR; eliminación de filas duplicadas en título, autor y variables del análisis; log1p en conteos de calificaciones/reseñas; imputación mediana y escalado ajustados solo en la muestra de entrenamiento.
+Filas originales: 500,000.
+Filas elegibles tras limpieza: 218,817.
+Duplicados exactos eliminados: 1,186.
+Filas excluidas por páginas inválidas/fuera de IQR: 56,102.
+Valla superior IQR de páginas: 647.50.
+
+AUDITORÍA DEL DATASET ORIGINAL
+                              indicador    valor
+                       Filas originales 500000.0
+                 Títulos vacíos o nulos      0.0
+                 Autores vacíos o nulos    160.0
+    Calificaciones nulas o no numéricas    258.0
+         Calificaciones fuera de [0, 5]      0.0
+           Páginas nulas o no numéricas  38992.0
+                Libros con páginas <= 0  39178.0
+Páginas positivas sobre el percentil 99   4213.0
+          Textos título+autor repetidos  16862.0
+      Percentil 99 de páginas positivas   1036.0
+Configuración: semilla=42; muestra máxima=20,000; entrenamiento=16,000; validación=4,000; k probado=[2, 3, 4, 5, 6].
+Parámetros K-Means: k=2; n_init=10; random_state=42.
+Silhouette (validación): 0.3676.
+Davies-Bouldin (validación): 1.0784.
+Inercia (entrenamiento): 40135.4182.
+
+PERFILES DE SEGMENTOS
+ segmento                               perfil  libros  participacion_pct  paginas_mediana  calificacion_media  calificaciones_mediana  resenas_mediana  series_pct                                                                        editoriales_top                                                   idiomas_top
+        0 menor extensión, menor participación  157869          72.146588            218.0            4.112993                     8.0              1.0   11.657767 Routledge (2,815); Oxford University Press (1,944); Cambridge University Press (1,873) English (136,977); Spanish; Castilian (3,988); French (3,737)
+        1 mayor extensión, mayor participación   60948          27.853412            288.0            3.934968                  1711.0            129.0   37.728884                              HarperCollins (547); Ballantine Books (417); Bantam (415)  English (45,467); Spanish; Castilian (3,084); French (2,608)
+
+Interpretación: los perfiles describen libros bien valorados en Goodreads, no ventas ni demanda observada de una librería.

@@ -1,4 +1,4 @@
-name: Ejecutar Semana 3 - Goodreads
+name: Ejecutar Actividad 3 - Goodreads
 
 on:
   push:
@@ -42,39 +42,44 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
-      - name: Ejecutar preprocesamiento y modelos
+      - name: Ejecutar pruebas de preparación y auditoría
+        run: python -m unittest discover -s tests -v
+
+      - name: Ejecutar la segmentación K-Means
         run: |
-          mkdir -p artifacts reportes
-          python -m jupyter nbconvert \
-            --to notebook \
-            --execute sincronicas/Semana_3_LIBROS.ipynb \
-            --output Semana_3_LIBROS_ejecutado.ipynb \
-            --output-dir artifacts \
-            --ExecutePreprocessor.timeout=3600
+          mkdir -p artifacts modelos/libros reportes
+          python -m src.actividad3_goodreads
+          cp reportes/actividad3_goodreads.txt artifacts/
+          cp reportes/hallazgos_actividad3.md artifacts/
+          cp -R reportes/figuras artifacts/
+          cp modelos/libros/kmeans_actividad3_goodreads.joblib artifacts/
 
       - name: Guardar copia actualizada del resumen en main
         if: github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reportes/resumen_modelos_libros.txt
+          git add reportes/actividad3_goodreads.txt \
+            reportes/figuras/*.png
 
           if git diff --cached --quiet; then
             echo "El resumen no tuvo cambios."
             exit 0
           fi
 
-          git commit -m "chore: actualizar resumen de modelos Goodreads [skip ci]"
+          git commit -m "chore: actualizar resultados Actividad 3 Goodreads [skip ci]"
           git fetch origin main
           git rebase origin/main
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
-      - name: Publicar resumen y notebook ejecutado
+      - name: Publicar evidencias de la ejecución
         uses: actions/upload-artifact@v4
         with:
-          name: resultados-semana-3-goodreads
+          name: resultados-actividad-3-goodreads
           path: |
-            reportes/resumen_modelos_libros.txt
-            artifacts/Semana_3_LIBROS_ejecutado.ipynb
+            artifacts/actividad3_goodreads.txt
+            artifacts/hallazgos_actividad3.md
+            artifacts/figuras/*.png
+            artifacts/kmeans_actividad3_goodreads.joblib
           if-no-files-found: error
           retention-days: 30

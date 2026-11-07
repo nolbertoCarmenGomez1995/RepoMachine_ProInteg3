@@ -46,7 +46,7 @@ jobs:
       - name: Limpiar reportes generados
         run: |
           mkdir -p reportes
-          rm -f reportes/goodreads_books.txt
+          rm -f reportes/goodreads_books.txt reportes/auditoria_calidad_goodreads.txt
 
       - name: Ejecutar actividad1.ipynb
         run: |
@@ -62,7 +62,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reportes/goodreads_books.txt actividad1.ipynb
+          git add reportes/goodreads_books.txt reportes/auditoria_calidad_goodreads.txt actividad1.ipynb
 
           if git diff --cached --quiet; then
             echo "No se generaron cambios."
