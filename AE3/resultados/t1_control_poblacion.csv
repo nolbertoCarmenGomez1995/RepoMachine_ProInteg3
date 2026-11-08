@@ -1,0 +1,9 @@
+criterio,registros,porcentaje_del_dataset
+Dataset original,500000,100.0
+Calificación faltante,258,0.05
+Calificación < 3.5,223590,44.72
+Calificación >= 3.5 (destacados),276152,55.23
+Destacados con páginas faltantes,22129,4.43
+Destacados con páginas < 1,18868,3.77
+Destacados con páginas > 5.000,51,0.01
+Población final: destacados con páginas entre 1 y 5.000,235104,47.02

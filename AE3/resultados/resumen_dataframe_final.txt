@@ -1,0 +1,177 @@
+RESUMEN DEL DATAFRAME
+============================================================
+Dataset: pfaha/goodreads-books
+Enlace: https://huggingface.co/datasets/pfaha/goodreads-books
+Configuración: default
+Split: train
+Revisión: 43b3198cd7ec9c142d56181f1a09ed9e8c112610
+Muestra: No; se parte del split train completo de la revisión indicada
+DataFrame resumido: df_final (transformado y enriquecido en AE3)
+Filtro: average_rating >= 3.5 y páginas entre 1 y 5000
+Umbral de extensión: 350 páginas (Lecturas Ágiles <= 350 < Obras extensas)
+Unidad: Registro de edición (book_id); work_id identifica la obra
+
+Filas: 235104
+Columnas: 19
+
+Columnas y tipos:
+- book_id: object
+- work_id: Int64
+- title: object
+- pages: Int64
+- categoria_extension: object
+- average_rating: float64
+- rango_calificacion: string
+- ratings_count: Int64
+- reviews_count: Int64
+- tasa_resenas: float64
+- publisher_original: object
+- publisher: string
+- language_original: object
+- idioma_normalizado: object
+- is_part_of_series: bool
+- cantidad_series: int64
+- format: object
+- formato_grupo: object
+- registro_representativo_obra: bool
+
+Valores nulos por columna:
+- book_id: 0
+- work_id: 0
+- title: 0
+- pages: 0
+- categoria_extension: 0
+- average_rating: 0
+- rango_calificacion: 0
+- ratings_count: 0
+- reviews_count: 0
+- tasa_resenas: 0
+- publisher_original: 4382
+- publisher: 6915
+- language_original: 5576
+- idioma_normalizado: 5576
+- is_part_of_series: 0
+- cantidad_series: 0
+- format: 1620
+- formato_grupo: 0
+- registro_representativo_obra: 0
+
+Valores vacíos por columna (texto '' o lista vacía, no cuentan como nulos):
+- book_id: 0
+- work_id: 0
+- title: 0
+- pages: 0
+- categoria_extension: 0
+- average_rating: 0
+- rango_calificacion: 0
+- ratings_count: 0
+- reviews_count: 0
+- tasa_resenas: 0
+- publisher_original: 2533
+- publisher: 0
+- language_original: 0
+- idioma_normalizado: 0
+- is_part_of_series: 0
+- cantidad_series: 0
+- format: 337
+- formato_grupo: 0
+- registro_representativo_obra: 0
+
+Estadísticas descriptivas de columnas numéricas:
+                     count      mean        std   min     25%     50%     75%          max
+pages           235104.000   275.587    220.875 1.000 144.000 240.000 352.000     4991.000
+average_rating  235104.000     4.069      0.395 3.500   3.790   4.000   4.250        5.000
+ratings_count   235104.000 19614.708 206781.767 1.000   4.000  22.000 274.000 11867285.000
+reviews_count   235104.000   767.530   6386.798 0.000   0.000   2.000  26.000   277914.000
+tasa_resenas    235104.000     0.113      0.172 0.000   0.000   0.071   0.139       11.333
+cantidad_series 235104.000     0.219      0.510 0.000   0.000   0.000   0.000       13.000
+
+Columnas categóricas (hasta 10 valores más frecuentes):
+- book_id (identificador): 235104 valores distintos no nulos
+- work_id (identificador): 211975 valores distintos no nulos
+- title: 219779 valores distintos no nulos
+    Selected Poems: 50
+    Jane Eyre: 43
+    Treasure Island: 38
+    Dracula: 34
+    A Tale of Two Cities: 32
+    Frankenstein: 30
+    Robinson Crusoe: 29
+    Oliver Twist: 28
+    Wuthering Heights: 26
+    Pride and Prejudice: 26
+- categoria_extension: 2 valores distintos no nulos
+    Lecturas Ágiles: 175788
+    Obras extensas: 59316
+- rango_calificacion: 3 valores distintos no nulos
+    3,5 a 3,99: 102680
+    4,0 a 4,49: 96740
+    4,5 a 5,0: 35684
+- publisher_original: 47630 valores distintos no nulos
+    Routledge: 3085
+    Oxford University Press: 2643
+    : 2532
+    Cambridge University Press: 2149
+    Springer: 1229
+    Wiley: 1098
+    HarperCollins: 1014
+    Kessinger Publishing: 798
+    iUniverse: 752
+    Penguin Books: 719
+- publisher: 47002 valores distintos no nulos
+    Routledge: 3087
+    Oxford University Press: 2645
+    Cambridge University Press: 2150
+    Springer: 1229
+    Wiley: 1098
+    HarperCollins: 1031
+    Kessinger Publishing: 798
+    iUniverse: 752
+    Penguin Books: 725
+    Simon & Schuster: 676
+- language_original: 115 valores distintos no nulos
+    English: 196293
+    Spanish; Castilian: 7550
+    French: 6751
+    German: 5950
+    Italian: 1916
+    Japanese: 1499
+    Indonesian: 1321
+    Portuguese: 1199
+    Dutch; Flemish: 998
+    Arabic: 799
+- idioma_normalizado: 115 valores distintos no nulos
+    English: 196293
+    Spanish: 7550
+    French: 6751
+    German: 5950
+    Italian: 1916
+    Japanese: 1499
+    Indonesian: 1321
+    Portuguese: 1199
+    Dutch: 998
+    Arabic: 799
+- is_part_of_series: 2 valores distintos no nulos
+    False: 190601
+    True: 44503
+- format: 433 valores distintos no nulos
+    Paperback: 123063
+    Hardcover: 74519
+    Kindle Edition: 10790
+    Mass Market Paperback: 8701
+    Library Binding: 4668
+    Unknown Binding: 1774
+    ebook: 1598
+    Audio CD: 1321
+    Spiral-bound: 693
+    Board Book: 648
+- formato_grupo: 6 valores distintos no nulos
+    Tapa blanda: 133716
+    Tapa dura: 80970
+    Digital: 12860
+    Sin informar: 3746
+    Audio: 2259
+    Otro: 1553
+- registro_representativo_obra: 2 valores distintos no nulos
+    True: 211975
+    False: 23129
