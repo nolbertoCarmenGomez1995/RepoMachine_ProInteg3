@@ -44,8 +44,14 @@ class Reportes:
         path.write_text(self.generar_reporte(df), encoding="utf-8")
         return path
 
-    def generar_resumen_dataframe(self, df: pd.DataFrame, metadatos: dict[str, object]) -> str:
-        """Genera el resumen del DataFrame obtenido, encabezado con los metadatos de su origen."""
+    def generar_resumen_dataframe(
+        self, df: pd.DataFrame, metadatos: dict[str, object], incluir_estadisticas: bool = False
+    ) -> str:
+        """Genera el resumen del DataFrame obtenido, encabezado con los metadatos de su origen.
+
+        Con `incluir_estadisticas` agrega estadísticas descriptivas de las columnas numéricas
+        y las frecuencias de las categóricas.
+        """
         self._validar_dataframe(df)
         nulos = df.isna().sum()
         lineas = [
@@ -65,16 +71,56 @@ class Reportes:
             "Valores vacíos por columna (texto '' o lista vacía, no cuentan como nulos):",
             *[f"- {columna}: {self._contar_vacios(df[columna])}" for columna in df.columns],
         ]
+        if incluir_estadisticas:
+            lineas += self._estadisticas_descriptivas(df)
         return "\n".join(lineas) + "\n"
 
     def guardar_resumen_dataframe(
-        self, df: pd.DataFrame, ruta: str | Path, metadatos: dict[str, object]
+        self,
+        df: pd.DataFrame,
+        ruta: str | Path,
+        metadatos: dict[str, object],
+        incluir_estadisticas: bool = False,
     ) -> Path:
         """Guarda el resumen del DataFrame en un archivo de texto UTF-8 y devuelve su ruta."""
         path = Path(ruta)
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(self.generar_resumen_dataframe(df, metadatos), encoding="utf-8")
+        path.write_text(
+            self.generar_resumen_dataframe(df, metadatos, incluir_estadisticas), encoding="utf-8"
+        )
         return path
+
+    @staticmethod
+    def _estadisticas_descriptivas(df: pd.DataFrame, max_categorias: int = 10) -> list[str]:
+        """Describe las numéricas y muestra las categorías más frecuentes de las demás columnas.
+
+        Las columnas identificadoras (nombre terminado en `_id`) solo se cuentan.
+        """
+        lineas: list[str] = []
+        identificadores = [c for c in df.columns if str(c).endswith("_id")]
+        numericas = df.drop(columns=identificadores).select_dtypes(include="number")
+        if not numericas.empty:
+            lineas += [
+                "",
+                "Estadísticas descriptivas de columnas numéricas:",
+                numericas.astype(float).describe().T.to_string(float_format=lambda valor: f"{valor:.3f}"),
+            ]
+        categoricas = df.select_dtypes(exclude="number")
+        if not categoricas.empty:
+            lineas += ["", f"Columnas categóricas (hasta {max_categorias} valores más frecuentes):"]
+        for columna in df.columns:
+            frecuencias = df[columna].value_counts(dropna=True)
+            if columna in identificadores:
+                lineas.append(f"- {columna} (identificador): {frecuencias.size} valores distintos no nulos")
+                continue
+            if columna not in categoricas.columns:
+                continue
+            lineas.append(f"- {columna}: {frecuencias.size} valores distintos no nulos")
+            lineas += [
+                f"    {valor}: {cantidad}"
+                for valor, cantidad in frecuencias.head(max_categorias).items()
+            ]
+        return lineas
 
     @staticmethod
     def _contar_vacios(serie: pd.Series) -> int:
