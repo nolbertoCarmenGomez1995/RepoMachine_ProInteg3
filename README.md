@@ -81,12 +81,82 @@ La primera ejecución descarga unos 180 MB y requiere conexión a internet. El
 notebook crea `AE2/resultados/` si no existe y regenera
 `resumen_dataframe.txt` (UTF-8) en cada ejecución.
 
+## AE3: Transformación y enriquecimiento
+
+Segunda etapa del proyecto integrador: transformar y enriquecer el dataset de
+AE2 para responder descriptivamente las preguntas de negocio, con una tabla por
+pregunta, y dejar los resultados listos para la visualización de AE4. Parte del
+mismo dataset y revisión de AE2 (`pfaha/goodreads-books`, split `train`
+completo, revisión `43b3198`).
+
+**Transformaciones y reglas de calidad.**
+
+- Población: calificación promedio ≥ 3,5 y páginas entre 1 y 5.000. Se
+  excluyen y se cuentan aparte los registros sin calificación, sin páginas,
+  con 0 páginas o con más de 5.000.
+- Se conservan los registros sin editorial, idioma o formato, y se reporta
+  cuántos faltan.
+- Editorial e idioma: se quitan los espacios externos y los textos vacíos pasan
+  a nulo. Los valores originales se conservan (`publisher_original`,
+  `language_original`).
+- Se conservan `book_id` (edición) y `work_id` (obra); el DataFrame final
+  tiene 235.104 filas y 19 columnas.
+
+**Variables incorporadas.**
+
+| Variable | Regla |
+|---|---|
+| `categoria_extension` | ≤ 350 páginas → Lecturas Ágiles; > 350 → Obras extensas |
+| `rango_calificacion` | 3,5 a 3,99 / 4,0 a 4,49 / 4,5 a 5,0 |
+| `idioma_normalizado` | Primer nombre de la etiqueta ("Spanish; Castilian" → "Spanish") |
+| `cantidad_series` | Número de series listadas en `series` |
+| `formato_grupo` | Tapa blanda, Tapa dura, Digital, Audio, Otro o Sin informar |
+| `tasa_resenas` | `reviews_count / ratings_count` |
+| `registro_representativo_obra` | Una edición por obra (la de más calificaciones), para sumar métricas de lectores sin doble conteo |
+
+**Preguntas de negocio y tablas.**
+
+| Pregunta | Archivo |
+|---|---|
+| P1. Población de estudio y exclusiones por criterio | `t1_control_poblacion.csv` |
+| P2. Número y porcentaje de títulos por área; sensibilidad del umbral | `t2_reparto_por_extension.csv`, `t2b_sensibilidad_umbral.csv` |
+| P3. Diez editoriales con más títulos por área y su calificación promedio | `t3_top_editoriales.csv` |
+| P4. Diez idiomas con más títulos por área y su calificación promedio | `t4_top_idiomas.csv` |
+| P5. Distribución de la calificación promedio por área | `t5_calificacion_por_extension.csv` |
+| P6. Composición por idioma de cada área | `t6_composicion_idioma.csv` |
+| Complementaria. Participación de lectores, series y formato por área | `t7_participacion_series.csv`, `t8_formato_por_extension.csv` |
+
+**Archivos de AE3.**
+
+```text
+AE3/documento/AE3_transformacion_enriquecimiento_goodreads.docx   Documento actualizado
+AE3/notebooks/AE3_transformacion_enriquecimiento.ipynb            Transformación, enriquecimiento y respuestas
+AE3/resultados/libros_preparados_enriquecidos.csv                 Dataset preparado y enriquecido
+AE3/resultados/t1_...csv a t8_...csv                              Tablas de resultados
+AE3/resultados/resumen_dataframe_final.txt                        Resumen descriptivo del DataFrame final
+src/preparacion.py                                                Funciones de transformación y enriquecimiento
+```
+
+**Ejecución.** Con el entorno instalado (ver *Entorno y ejecucion*), desde la
+raíz del repositorio:
+
+```powershell
+jupyter nbconvert --to notebook --execute --inplace AE3/notebooks/AE3_transformacion_enriquecimiento.ipynb
+```
+
+El notebook crea `AE3/resultados/` si no existe y regenera en cada ejecución el
+dataset preparado, las tablas `.csv` y `resumen_dataframe_final.txt` (UTF-8,
+rutas relativas). Después vuelve a leer los archivos para verificar que
+coinciden con el notebook.
+
 ## Estructura
 
 ```text
 actividad1.ipynb                 Actividad propia con Goodreads
 AE2/                             Etapa 1 del proyecto integrador (necesidad analítica)
+AE3/                             Etapa 2 del proyecto integrador (transformación y enriquecimiento)
 src/hf_loader.py                 Carga de datasets de Hugging Face
+src/preparacion.py               Transformación y enriquecimiento (AE3)
 src/reportes.py                  Generacion de reportes
 reportes/goodreads_books.txt     Reporte generado por la actividad
 requirements.txt                 Dependencias del proyecto
