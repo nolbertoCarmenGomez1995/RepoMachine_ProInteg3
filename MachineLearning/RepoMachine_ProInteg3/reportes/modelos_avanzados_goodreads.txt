@@ -1,6 +1,6 @@
 RESUMEN — RED NEURONAL Y TRANSFORMER GOODREADS
 ==============================================================
-Fecha de ejecución: 2026-11-22T18:31:08+00:00
+Fecha de ejecución: 2026-11-23T16:52:08+00:00
 Dataset: pfaha/goodreads-books, split train.
 Variable objetivo didáctica: alta_calificacion = 1 cuando average_rating >= 4.2.
 La calificación original no se incluye como predictora.
