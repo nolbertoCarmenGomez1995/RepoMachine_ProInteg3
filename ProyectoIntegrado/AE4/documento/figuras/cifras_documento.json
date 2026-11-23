@@ -1,0 +1,779 @@
+{
+ "poblacion": [
+  {
+   "criterio": "Dataset original",
+   "registros": 500000,
+   "porcentaje_del_dataset": 100.0
+  },
+  {
+   "criterio": "Calificación faltante",
+   "registros": 258,
+   "porcentaje_del_dataset": 0.05
+  },
+  {
+   "criterio": "Calificación < 3.5",
+   "registros": 223590,
+   "porcentaje_del_dataset": 44.72
+  },
+  {
+   "criterio": "Calificación >= 3.5 (destacados)",
+   "registros": 276152,
+   "porcentaje_del_dataset": 55.23
+  },
+  {
+   "criterio": "Destacados con páginas faltantes",
+   "registros": 22129,
+   "porcentaje_del_dataset": 4.43
+  },
+  {
+   "criterio": "Destacados con páginas < 1",
+   "registros": 18868,
+   "porcentaje_del_dataset": 3.77
+  },
+  {
+   "criterio": "Destacados con páginas > 5.000",
+   "registros": 51,
+   "porcentaje_del_dataset": 0.01
+  },
+  {
+   "criterio": "Población final: destacados con páginas entre 1 y 5.000",
+   "registros": 235104,
+   "porcentaje_del_dataset": 47.02
+  }
+ ],
+ "total_registros": 235104,
+ "total_obras": 211975,
+ "calificacion_media_global": 4.0688,
+ "mediana_paginas_global": 240.0,
+ "reparto": [
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "registros_edicion": 175788,
+   "porcentaje_registros": 74.7703,
+   "obras_asignadas": 161020,
+   "porcentaje_obras": 75.9618,
+   "paginas_mediana": 192.0
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "registros_edicion": 59316,
+   "porcentaje_registros": 25.2297,
+   "obras_asignadas": 50955,
+   "porcentaje_obras": 24.0382,
+   "paginas_mediana": 453.0
+  }
+ ],
+ "sensibilidad": [
+  {
+   "umbral_paginas": 250,
+   "categoria_extension": "Lecturas Ágiles",
+   "registros_edicion": 123187,
+   "porcentaje_registros": 52.4,
+   "obras_unicas": 115082,
+   "obras_con_ediciones_en_ambas_areas": 2781
+  },
+  {
+   "umbral_paginas": 250,
+   "categoria_extension": "Obras extensas",
+   "registros_edicion": 111917,
+   "porcentaje_registros": 47.6,
+   "obras_unicas": 99674,
+   "obras_con_ediciones_en_ambas_areas": 2781
+  },
+  {
+   "umbral_paginas": 300,
+   "categoria_extension": "Lecturas Ágiles",
+   "registros_edicion": 152779,
+   "porcentaje_registros": 64.98,
+   "obras_unicas": 141809,
+   "obras_con_ediciones_en_ambas_areas": 2662
+  },
+  {
+   "umbral_paginas": 300,
+   "categoria_extension": "Obras extensas",
+   "registros_edicion": 82325,
+   "porcentaje_registros": 35.02,
+   "obras_unicas": 72828,
+   "obras_con_ediciones_en_ambas_areas": 2662
+  },
+  {
+   "umbral_paginas": 350,
+   "categoria_extension": "Lecturas Ágiles",
+   "registros_edicion": 175788,
+   "porcentaje_registros": 74.77,
+   "obras_unicas": 162287,
+   "obras_con_ediciones_en_ambas_areas": 2506
+  },
+  {
+   "umbral_paginas": 350,
+   "categoria_extension": "Obras extensas",
+   "registros_edicion": 59316,
+   "porcentaje_registros": 25.23,
+   "obras_unicas": 52194,
+   "obras_con_ediciones_en_ambas_areas": 2506
+  },
+  {
+   "umbral_paginas": 400,
+   "categoria_extension": "Lecturas Ágiles",
+   "registros_edicion": 194193,
+   "porcentaje_registros": 82.6,
+   "obras_unicas": 178292,
+   "obras_con_ediciones_en_ambas_areas": 2218
+  },
+  {
+   "umbral_paginas": 400,
+   "categoria_extension": "Obras extensas",
+   "registros_edicion": 40911,
+   "porcentaje_registros": 17.4,
+   "obras_unicas": 35901,
+   "obras_con_ediciones_en_ambas_areas": 2218
+  }
+ ],
+ "editoriales": [
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "Routledge",
+   "registros_edicion": 2296,
+   "obras_unicas": 2246,
+   "calificacion_promedio": 4.0901,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 1.3445,
+   "porcentaje_obras_con_valor": 1.418
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "Oxford University Press",
+   "registros_edicion": 1499,
+   "obras_unicas": 1457,
+   "calificacion_promedio": 4.0622,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.8778,
+   "porcentaje_obras_con_valor": 0.9199
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "Cambridge University Press",
+   "registros_edicion": 1366,
+   "obras_unicas": 1312,
+   "calificacion_promedio": 4.0594,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.7999,
+   "porcentaje_obras_con_valor": 0.8283
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "HarperCollins",
+   "registros_edicion": 819,
+   "obras_unicas": 791,
+   "calificacion_promedio": 3.9532,
+   "calificacion_mediana": 3.94,
+   "porcentaje_registros_con_valor": 0.4796,
+   "porcentaje_obras_con_valor": 0.4994
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "iUniverse",
+   "registros_edicion": 628,
+   "obras_unicas": 617,
+   "calificacion_promedio": 4.3543,
+   "calificacion_mediana": 4.26,
+   "porcentaje_registros_con_valor": 0.3677,
+   "porcentaje_obras_con_valor": 0.3895
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "Scholastic",
+   "registros_edicion": 617,
+   "obras_unicas": 614,
+   "calificacion_promedio": 3.9599,
+   "calificacion_mediana": 3.93,
+   "porcentaje_registros_con_valor": 0.3613,
+   "porcentaje_obras_con_valor": 0.3877
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "Springer",
+   "registros_edicion": 597,
+   "obras_unicas": 589,
+   "calificacion_promedio": 4.2616,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.3496,
+   "porcentaje_obras_con_valor": 0.3719
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "Kessinger Publishing",
+   "registros_edicion": 514,
+   "obras_unicas": 510,
+   "calificacion_promedio": 4.0817,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.301,
+   "porcentaje_obras_con_valor": 0.322
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "Wiley",
+   "registros_edicion": 517,
+   "obras_unicas": 508,
+   "calificacion_promedio": 4.03,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.3027,
+   "porcentaje_obras_con_valor": 0.3207
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "publisher": "Palgrave Macmillan",
+   "registros_edicion": 510,
+   "obras_unicas": 502,
+   "calificacion_promedio": 4.0915,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.2986,
+   "porcentaje_obras_con_valor": 0.3169
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "Oxford University Press",
+   "registros_edicion": 1146,
+   "obras_unicas": 1095,
+   "calificacion_promedio": 4.1031,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 1.9962,
+   "porcentaje_obras_con_valor": 2.1562
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "Routledge",
+   "registros_edicion": 791,
+   "obras_unicas": 764,
+   "calificacion_promedio": 4.0926,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 1.3778,
+   "porcentaje_obras_con_valor": 1.5044
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "Cambridge University Press",
+   "registros_edicion": 784,
+   "obras_unicas": 758,
+   "calificacion_promedio": 4.1038,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 1.3656,
+   "porcentaje_obras_con_valor": 1.4926
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "Springer",
+   "registros_edicion": 632,
+   "obras_unicas": 623,
+   "calificacion_promedio": 4.2967,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 1.1009,
+   "porcentaje_obras_con_valor": 1.2268
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "Wiley",
+   "registros_edicion": 581,
+   "obras_unicas": 558,
+   "calificacion_promedio": 4.0457,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 1.012,
+   "porcentaje_obras_con_valor": 1.0988
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "Prentice Hall",
+   "registros_edicion": 350,
+   "obras_unicas": 332,
+   "calificacion_promedio": 4.021,
+   "calificacion_mediana": 3.955,
+   "porcentaje_registros_con_valor": 0.6097,
+   "porcentaje_obras_con_valor": 0.6537
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "Kessinger Publishing",
+   "registros_edicion": 284,
+   "obras_unicas": 280,
+   "calificacion_promedio": 4.0937,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.4947,
+   "porcentaje_obras_con_valor": 0.5514
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "Thorndike Press",
+   "registros_edicion": 261,
+   "obras_unicas": 261,
+   "calificacion_promedio": 3.937,
+   "calificacion_mediana": 3.93,
+   "porcentaje_registros_con_valor": 0.4546,
+   "porcentaje_obras_con_valor": 0.5139
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "CRC Press",
+   "registros_edicion": 262,
+   "obras_unicas": 258,
+   "calificacion_promedio": 4.2908,
+   "calificacion_mediana": 4.1,
+   "porcentaje_registros_con_valor": 0.4564,
+   "porcentaje_obras_con_valor": 0.508
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "publisher": "Bantam",
+   "registros_edicion": 274,
+   "obras_unicas": 255,
+   "calificacion_promedio": 3.9341,
+   "calificacion_mediana": 3.955,
+   "porcentaje_registros_con_valor": 0.4773,
+   "porcentaje_obras_con_valor": 0.5021
+  }
+ ],
+ "idiomas": [
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "English",
+   "registros_edicion": 147959,
+   "obras_unicas": 139094,
+   "calificacion_promedio": 4.0744,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 86.2639,
+   "porcentaje_obras_con_valor": 87.6542
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "Spanish",
+   "registros_edicion": 5647,
+   "obras_unicas": 5412,
+   "calificacion_promedio": 4.041,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 3.2923,
+   "porcentaje_obras_con_valor": 3.4105
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "French",
+   "registros_edicion": 4740,
+   "obras_unicas": 4587,
+   "calificacion_promedio": 4.0002,
+   "calificacion_mediana": 3.97,
+   "porcentaje_registros_con_valor": 2.7635,
+   "porcentaje_obras_con_valor": 2.8906
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "German",
+   "registros_edicion": 3835,
+   "obras_unicas": 3712,
+   "calificacion_promedio": 4.0269,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 2.2359,
+   "porcentaje_obras_con_valor": 2.3392
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "Italian",
+   "registros_edicion": 1332,
+   "obras_unicas": 1308,
+   "calificacion_promedio": 3.952,
+   "calificacion_mediana": 3.9,
+   "porcentaje_registros_con_valor": 0.7766,
+   "porcentaje_obras_con_valor": 0.8243
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "Japanese",
+   "registros_edicion": 1206,
+   "obras_unicas": 1200,
+   "calificacion_promedio": 4.1174,
+   "calificacion_mediana": 4.02,
+   "porcentaje_registros_con_valor": 0.7031,
+   "porcentaje_obras_con_valor": 0.7562
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "Indonesian",
+   "registros_edicion": 1058,
+   "obras_unicas": 1055,
+   "calificacion_promedio": 4.0133,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.6168,
+   "porcentaje_obras_con_valor": 0.6648
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "Portuguese",
+   "registros_edicion": 872,
+   "obras_unicas": 852,
+   "calificacion_promedio": 3.9866,
+   "calificacion_mediana": 3.95,
+   "porcentaje_registros_con_valor": 0.5084,
+   "porcentaje_obras_con_valor": 0.5369
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "Dutch",
+   "registros_edicion": 701,
+   "obras_unicas": 696,
+   "calificacion_promedio": 3.9191,
+   "calificacion_mediana": 3.87,
+   "porcentaje_registros_con_valor": 0.4087,
+   "porcentaje_obras_con_valor": 0.4386
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "idioma_normalizado": "Arabic",
+   "registros_edicion": 603,
+   "obras_unicas": 598,
+   "calificacion_promedio": 3.8961,
+   "calificacion_mediana": 3.86,
+   "porcentaje_registros_con_valor": 0.3516,
+   "porcentaje_obras_con_valor": 0.3768
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "English",
+   "registros_edicion": 48334,
+   "obras_unicas": 43894,
+   "calificacion_promedio": 4.0786,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 83.3216,
+   "porcentaje_obras_con_valor": 85.6635
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "German",
+   "registros_edicion": 2115,
+   "obras_unicas": 2039,
+   "calificacion_promedio": 4.051,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 3.646,
+   "porcentaje_obras_con_valor": 3.9793
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "French",
+   "registros_edicion": 2011,
+   "obras_unicas": 1940,
+   "calificacion_promedio": 4.0585,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 3.4667,
+   "porcentaje_obras_con_valor": 3.7861
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "Spanish",
+   "registros_edicion": 1903,
+   "obras_unicas": 1791,
+   "calificacion_promedio": 4.0682,
+   "calificacion_mediana": 4.01,
+   "porcentaje_registros_con_valor": 3.2805,
+   "porcentaje_obras_con_valor": 3.4953
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "Italian",
+   "registros_edicion": 584,
+   "obras_unicas": 561,
+   "calificacion_promedio": 4.0427,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 1.0067,
+   "porcentaje_obras_con_valor": 1.0948
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "Russian",
+   "registros_edicion": 366,
+   "obras_unicas": 361,
+   "calificacion_promedio": 4.1136,
+   "calificacion_mediana": 4.05,
+   "porcentaje_registros_con_valor": 0.6309,
+   "porcentaje_obras_con_valor": 0.7045
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "Portuguese",
+   "registros_edicion": 327,
+   "obras_unicas": 324,
+   "calificacion_promedio": 4.0869,
+   "calificacion_mediana": 4.05,
+   "porcentaje_registros_con_valor": 0.5637,
+   "porcentaje_obras_con_valor": 0.6323
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "Japanese",
+   "registros_edicion": 293,
+   "obras_unicas": 291,
+   "calificacion_promedio": 4.1176,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.5051,
+   "porcentaje_obras_con_valor": 0.5679
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "Dutch",
+   "registros_edicion": 297,
+   "obras_unicas": 289,
+   "calificacion_promedio": 3.9954,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.512,
+   "porcentaje_obras_con_valor": 0.564
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "idioma_normalizado": "Indonesian",
+   "registros_edicion": 263,
+   "obras_unicas": 261,
+   "calificacion_promedio": 4.0344,
+   "calificacion_mediana": 4.0,
+   "porcentaje_registros_con_valor": 0.4534,
+   "porcentaje_obras_con_valor": 0.5094
+  }
+ ],
+ "calificacion_rangos": [
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "rango_calificacion": "3,5 a 3,99",
+   "registros_edicion": 77694,
+   "porcentaje_registros": 44.1976
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "rango_calificacion": "4,0 a 4,49",
+   "registros_edicion": 70488,
+   "porcentaje_registros": 40.0983
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "rango_calificacion": "4,5 a 5,0",
+   "registros_edicion": 27606,
+   "porcentaje_registros": 15.7041
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "rango_calificacion": "3,5 a 3,99",
+   "registros_edicion": 24986,
+   "porcentaje_registros": 42.1235
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "rango_calificacion": "4,0 a 4,49",
+   "registros_edicion": 26252,
+   "porcentaje_registros": 44.2579
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "rango_calificacion": "4,5 a 5,0",
+   "registros_edicion": 8078,
+   "porcentaje_registros": 13.6186
+  }
+ ],
+ "calificacion_estadisticas": [
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "registros_edicion": 175788,
+   "calificacion_media": 4.0665,
+   "desviacion_estandar": 0.4036,
+   "minimo": 3.5,
+   "cuartil_1": 3.78,
+   "mediana": 4.0,
+   "cuartil_3": 4.25,
+   "maximo": 5.0,
+   "rango_intercuartil": 0.47
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "registros_edicion": 59316,
+   "calificacion_media": 4.0755,
+   "desviacion_estandar": 0.3688,
+   "minimo": 3.5,
+   "cuartil_1": 3.82,
+   "mediana": 4.0,
+   "cuartil_3": 4.25,
+   "maximo": 5.0,
+   "rango_intercuartil": 0.43
+  }
+ ],
+ "composicion_idioma": [
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "grupo": "English",
+   "porcentaje_registros": 84.169
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "grupo": "French",
+   "porcentaje_registros": 2.6964
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "grupo": "German",
+   "porcentaje_registros": 2.1816
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "grupo": "Italian",
+   "porcentaje_registros": 0.7577
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "grupo": "Otros idiomas",
+   "porcentaje_registros": 4.5543
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "grupo": "Sin idioma informado",
+   "porcentaje_registros": 2.4285
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "grupo": "Spanish",
+   "porcentaje_registros": 3.2124
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "grupo": "English",
+   "porcentaje_registros": 81.4856
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "grupo": "French",
+   "porcentaje_registros": 3.3903
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "grupo": "German",
+   "porcentaje_registros": 3.5656
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "grupo": "Italian",
+   "porcentaje_registros": 0.9846
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "grupo": "Otros idiomas",
+   "porcentaje_registros": 5.1622
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "grupo": "Sin idioma informado",
+   "porcentaje_registros": 2.2035
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "grupo": "Spanish",
+   "porcentaje_registros": 3.2082
+  }
+ ],
+ "idiomas_principales": [
+  "English",
+  "Spanish",
+  "French",
+  "German",
+  "Italian"
+ ],
+ "participacion": [
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "obras_asignadas": 161020,
+   "calificaciones_totales": 480178210,
+   "resenas_totales": 23748290,
+   "calificaciones_mediana_por_obra": 13.0,
+   "resenas_mediana_por_obra": 2.0,
+   "obras_en_series": 27622,
+   "porcentaje_obras_en_series": 17.1544,
+   "porcentaje_calificaciones": 56.1725,
+   "porcentaje_resenas": 58.5689
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "obras_asignadas": 50955,
+   "calificaciones_totales": 374649243,
+   "resenas_totales": 16799301,
+   "calificaciones_mediana_por_obra": 31.0,
+   "resenas_mediana_por_obra": 3.0,
+   "obras_en_series": 9471,
+   "porcentaje_obras_en_series": 18.587,
+   "porcentaje_calificaciones": 43.8275,
+   "porcentaje_resenas": 41.4311
+  }
+ ],
+ "formato": [
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "formato_grupo": "Audio",
+   "registros_edicion": 2162,
+   "porcentaje_registros": 1.2299
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "formato_grupo": "Digital",
+   "registros_edicion": 8858,
+   "porcentaje_registros": 5.039
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "formato_grupo": "Otro",
+   "registros_edicion": 1270,
+   "porcentaje_registros": 0.7225
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "formato_grupo": "Sin informar",
+   "registros_edicion": 2981,
+   "porcentaje_registros": 1.6958
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "formato_grupo": "Tapa blanda",
+   "registros_edicion": 102351,
+   "porcentaje_registros": 58.2241
+  },
+  {
+   "categoria_extension": "Lecturas Ágiles",
+   "formato_grupo": "Tapa dura",
+   "registros_edicion": 58166,
+   "porcentaje_registros": 33.0887
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "formato_grupo": "Audio",
+   "registros_edicion": 97,
+   "porcentaje_registros": 0.1635
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "formato_grupo": "Digital",
+   "registros_edicion": 4002,
+   "porcentaje_registros": 6.7469
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "formato_grupo": "Otro",
+   "registros_edicion": 283,
+   "porcentaje_registros": 0.4771
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "formato_grupo": "Sin informar",
+   "registros_edicion": 765,
+   "porcentaje_registros": 1.2897
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "formato_grupo": "Tapa blanda",
+   "registros_edicion": 31365,
+   "porcentaje_registros": 52.8778
+  },
+  {
+   "categoria_extension": "Obras extensas",
+   "formato_grupo": "Tapa dura",
+   "registros_edicion": 22804,
+   "porcentaje_registros": 38.4449
+  }
+ ]
+}
