@@ -180,6 +180,29 @@ genera una dirección `https://<subdominio>.streamlit.app` al conectar el
 repositorio, la rama y `ProyectoIntegrado/AE4/app.py`. La aplicación debe
 publicarse desde el repositorio de entrega y necesita los archivos de AE3.
 Cuando exista, añade aquí la URL real; no uses `localhost` como enlace público.
+Los pasos están en `AE4/README.md`, sección *Publicación web*.
+
+**Documento final y presentación.**
+
+```text
+AE4/documento/Proyecto_Integrado_Goodreads_documento_final.pdf    Documento completo del proyecto (AE2, AE3 y AE4)
+AE4/documento/Proyecto_Integrado_Goodreads_documento_final.docx   Fuente editable del documento
+AE4/documento/generar_figuras.py                                  Genera las figuras y cifras del documento
+AE4/documento/figuras/                                            Figuras PNG y cifras_documento.json
+AE4/documento/capturas/                                           Capturas de la aplicación (anexo A)
+AE4/presentacion/guion_presentacion.md                            Guion de la presentación de 10 minutos
+```
+
+El documento integra portada, contenido e índices, introducción, necesidad,
+justificación, objetivos, marco teórico, metodología, transformación y
+enriquecimiento (AE3), métricas y visualizaciones (sección 10), resultados,
+conclusiones y recomendaciones, y referencias. Sus cifras se calculan con las
+mismas funciones de `AE4/dashboard.py` que usa la aplicación. Para regenerar
+las figuras, desde la carpeta `ProyectoIntegrado`:
+
+```powershell
+python AE4/documento/generar_figuras.py
+```
 
 ## Estructura
 
@@ -188,6 +211,8 @@ actividad1.ipynb                 Notebook conservado del proyecto
 AE2/                             Etapa 1 del proyecto integrador (necesidad analítica)
 AE3/                             Etapa 2 del proyecto integrador (transformación y enriquecimiento)
 AE4/                             Dashboard descriptivo de Goodreads (Streamlit y Plotly)
+AE4/documento/                   Documento final del proyecto (PDF y Word) y sus figuras
+AE4/presentacion/                Guion de la presentación
 src/hf_loader.py                 Carga de datasets de Hugging Face
 src/preparacion.py               Transformación y enriquecimiento (AE3)
 src/reportes.py                  Generacion de reportes
