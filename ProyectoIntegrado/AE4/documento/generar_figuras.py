@@ -133,7 +133,7 @@ def figura_ranking(ranking: pd.DataFrame, columna: str, titulo: str, nombre: str
     for ax, area in zip(ejes, ORDEN_AREAS):
         datos = ranking.loc[ranking["categoria_extension"].eq(area)].iloc[::-1]
         barras = ax.barh(datos[columna], datos["obras_unicas"], color=COLORES_AREA[area])
-        ax.bar_label(barras, labels=[f"{miles(o)} · {decimal(c)}" for o, c in
+        ax.bar_label(barras, labels=[f"{miles(o)} ({decimal(c)})" for o, c in
                                      zip(datos["obras_unicas"], datos["calificacion_promedio"])],
                      padding=3, fontsize=8)
         ax.xaxis.set_major_formatter(formato_miles)
@@ -143,7 +143,7 @@ def figura_ranking(ranking: pd.DataFrame, columna: str, titulo: str, nombre: str
         ax.tick_params(axis="y", labelsize=8)
     ejes[0].set_ylabel(etiqueta)
     fig.suptitle(titulo, fontweight="bold")
-    fig.text(0.5, -0.02, "Etiqueta: títulos únicos · calificación promedio (escala 1 a 5)",
+    fig.text(0.5, -0.02, "Etiqueta: títulos únicos (calificación promedio, escala de 1 a 5)",
              ha="center", fontsize=8, color="#555555")
     guardar(fig, nombre)
 

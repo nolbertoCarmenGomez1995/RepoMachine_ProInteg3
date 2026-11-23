@@ -6,24 +6,24 @@ Nueva York).
 
 | Tiempo | Bloque | Presenta |
 |---|---|---|
-| 0:00 – 2:00 | Necesidad, preguntas y datos | Andrés |
-| 2:00 – 5:00 | Demostración: P1, P2 y resumen | Andrés |
-| 5:00 – 8:00 | Demostración: P3, P4, P6 y P5 | Nolberto |
-| 8:00 – 10:00 | Conclusiones, recomendaciones y limitaciones | Nolberto |
+| 0:00 a 2:00 | Necesidad, preguntas y datos | Andrés |
+| 2:00 a 5:00 | Demostración: P1, P2 y resumen | Andrés |
+| 5:00 a 8:00 | Demostración: P3, P4, P6 y P5 | Nolberto |
+| 8:00 a 10:00 | Conclusiones, recomendaciones y limitaciones | Nolberto |
 
 El reparto es una sugerencia: pueden intercambiar bloques, pero cada
 integrante debe explicar una parte y su relación con la necesidad.
 
 Todas las cifras corresponden a la aplicación **sin filtros** (así se abre).
 
-## 0:00 – 2:00 · Necesidad, preguntas y datos (Andrés)
+## 0:00 a 2:00: Necesidad, preguntas y datos (Andrés)
 
 Abrir la aplicación y desplegar *Necesidad, preguntas de negocio y dataset*.
 
 - **Necesidad.** Una librería en Nueva York (escenario hipotético) quiere
   repartir su espacio entre *Lecturas Ágiles* y *Grandes Clásicos y Sagas*, y
   decidir qué editoriales e idiomas priorizar en sus compras importadas.
-- **Pregunta.** Entre los libros de Goodreads con calificación ≥ 3,5, ¿cómo se
+- **Pregunta.** Entre los libros de Goodreads con calificación de 3,5 o más, ¿cómo se
   distribuyen por extensión, qué editoriales e idiomas concentran más títulos y
   cómo varía la calificación?
 - **Datos.** `pfaha/goodreads-books` de Hugging Face: 500.000 registros y
@@ -32,7 +32,7 @@ Abrir la aplicación y desplegar *Necesidad, preguntas de negocio y dataset*.
 - Señalar los cuatro indicadores de arriba: 235.104 registros, 211.975 títulos
   únicos, calificación media 4,07 y mediana de 240 páginas.
 
-## 2:00 – 5:00 · Demostración P1, P2 y resumen (Andrés)
+## 2:00 a 5:00: Demostración P1, P2 y resumen (Andrés)
 
 1. **Pestaña Población y método (P1).**
    - **Métrica:** ediciones excluidas por criterio.
@@ -44,13 +44,13 @@ Abrir la aplicación y desplegar *Necesidad, preguntas de negocio y dataset*.
    - **Cifra:** Lecturas Ágiles 161.020 (75,96 %) y Obras extensas 50.955 (24,04 %).
    - Mostrar el gráfico de sensibilidad: con 250 páginas sería 52 % / 48 %; con
      400, 83 % / 17 %. El umbral de 350 está cerca del percentil 75.
-   - **Decisión:** punto de partida de ¾ y ¼ de títulos.
+   - **Decisión:** punto de partida de tres cuartas partes de los títulos para lecturas ágiles y una cuarta parte para obras extensas.
    - **Limitación:** el porcentaje de títulos no es porcentaje de estante.
 3. **Pestaña Resumen para decidir.** Mostrar que todo se recalcula con los
    filtros: por ejemplo, elegir el idioma *Spanish* en la barra lateral y volver
    a quitarlo.
 
-## 5:00 – 8:00 · Demostración P3, P4, P6 y P5 (Nolberto)
+## 5:00 a 8:00: Demostración P3, P4, P6 y P5 (Nolberto)
 
 1. **Pestaña Editoriales (P3).**
    - **Métrica:** títulos únicos por editorial y su calificación promedio.
@@ -72,7 +72,7 @@ Abrir la aplicación y desplegar *Necesidad, preguntas de negocio y dataset*.
    - **Mensaje:** la calificación no distingue las áreas, por lo que no sirve
      para repartir el espacio.
 
-## 8:00 – 10:00 · Conclusiones y limitaciones (Nolberto)
+## 8:00 a 10:00: Conclusiones y limitaciones (Nolberto)
 
 Abrir la pestaña **Conclusiones**.
 
