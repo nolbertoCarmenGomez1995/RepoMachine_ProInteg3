@@ -100,12 +100,11 @@ repositorio, por ejemplo la del dueño):
 
 Guía oficial: [desplegar en Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy).
 
-## Documento final y presentación
+## Documento final
 
 El documento completo del proyecto está en
 `AE4/documento/Proyecto_Integrado_Goodreads_documento_final.pdf` (con su
 versión editable `.docx`). Su sección 10 presenta las métricas y los gráficos
 de cada pregunta con las mismas cifras de la aplicación sin filtros; las figuras
 se regeneran con `python AE4/documento/generar_figuras.py` desde la carpeta
-`ProyectoIntegrado`. El guion de la presentación de 10 minutos está en
-`AE4/presentacion/guion_presentacion.md`.
+`ProyectoIntegrado`.
