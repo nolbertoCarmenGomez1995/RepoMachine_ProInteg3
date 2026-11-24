@@ -8,6 +8,8 @@ El material vigente de Proyecto Integrado está en [`ProyectoIntegrado/`](Proyec
 
 Para consultar cómo ejecutar los notebooks y qué contiene la entrega, revisa [`ProyectoIntegrado/README.md`](ProyectoIntegrado/README.md).
 
+El documento final del proyecto (AE2, AE3 y AE4) está en [`ProyectoIntegrado/AE4/documento/Proyecto_Integrado_Goodreads_documento_final.pdf`](ProyectoIntegrado/AE4/documento/Proyecto_Integrado_Goodreads_documento_final.pdf), y la aplicación de Streamlit en [`ProyectoIntegrado/AE4/app.py`](ProyectoIntegrado/AE4/app.py).
+
 ## Machine Learning
 
 El material de Machine Learning está en [`MachineLearning/RepoMachine_ProInteg3/`](MachineLearning/RepoMachine_ProInteg3/): ejercicios sincrónicos, código, pruebas y la actividad de segmentación K-Means. Esta actividad de Machine Learning es distinta de AE3 de Proyecto Integrado, aunque ambas usen Goodreads.

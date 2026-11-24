@@ -80,8 +80,31 @@ El despliegue debe hacerse cuando el código y los archivos necesarios de AE3
 estén en el repositorio de entrega: el CSV preparado, `t1_control_poblacion.csv`
 y `t2b_sensibilidad_umbral.csv`. La composición por idioma se calcula desde el
 CSV filtrado y no requiere `t6_composicion_idioma.csv`. El CSV preparado
-pesa aproximadamente 42,6 MB. Después se debe copiar la URL real aquí y en el
+pesa aproximadamente 48 MB. Después se debe copiar la URL real aquí y en el
 README del proyecto. No se debe compartir una URL inventada o una dirección
 local `localhost`.
 
+Pasos para publicarla (los hace una cuenta de GitHub con acceso al
+repositorio, por ejemplo la del dueño):
+
+1. Entrar a https://share.streamlit.io e iniciar sesión con GitHub.
+2. Elegir **Create app** → **Deploy a public app from GitHub**.
+3. Completar: repositorio `nolbertoCarmenGomez1995/RepoMachine_ProInteg3`,
+   rama `main` y archivo principal `ProyectoIntegrado/AE4/app.py`.
+4. En **Advanced settings**, elegir Python 3.13, la versión con la que se
+   probaron la aplicación y sus pruebas.
+5. Pulsar **Deploy** y esperar a que termine la instalación de
+   `AE4/requirements.txt`.
+6. Copiar la URL `https://….streamlit.app` en este README y en
+   `ProyectoIntegrado/README.md`, y compartirla en la entrega.
+
 Guía oficial: [desplegar en Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy).
+
+## Documento final
+
+El documento completo del proyecto está en
+`AE4/documento/Proyecto_Integrado_Goodreads_documento_final.pdf` (con su
+versión editable `.docx`). Su sección 10 presenta las métricas y los gráficos
+de cada pregunta con las mismas cifras de la aplicación sin filtros; las figuras
+se regeneran con `python AE4/documento/generar_figuras.py` desde la carpeta
+`ProyectoIntegrado`.
